@@ -1,0 +1,38 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.root {
+  width: 280px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.09em;
+}
+
+.top {
+  @include flexbox(space-between);
+}
+
+.bottom {
+  @include flexbox(center);
+}
+
+.input {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-webkit-slider-runnable-track {
+    @include rangeTrack;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include rangeThumb;
+  }
+  &::-moz-range-track {
+    @include rangeTrack;
+  }
+  &::-moz-range-thumb {
+    @include rangeThumb;
+  }
+}

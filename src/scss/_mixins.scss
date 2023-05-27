@@ -3,3 +3,49 @@
   align-items: center;
   justify-content: $jc;
 }
+
+@mixin hoverlink($color) {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    top: 25px;
+    left: 0;
+    background-color: $blue;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+@mixin button($color, $bc) {
+  display: inline-block;
+  color: $color;
+  background-color: $bc;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: darken($bc, 7%);
+  }
+}
+
+@mixin rangeTrack {
+  border-radius: 8px;
+  height: 2px;
+  background-color: rgba($black, 0.6);
+}
+
+@mixin rangeThumb {
+  border-radius: 10px;
+  background-color: $blue;
+  width: 10px;
+  height: 10px;
+  margin-top: -4px;
+}

@@ -1,0 +1,16 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  @include flexbox(space-between);
+  width: 520px;
+}
+
+.link {
+  @include hoverlink($blue);
+  font-family: 'Cairo', sans-serif;
+  line-height: 199.4%;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.09em;
+}

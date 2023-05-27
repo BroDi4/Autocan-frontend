@@ -1,0 +1,71 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.root {
+  max-width: 250px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 199.4%;
+  letter-spacing: 0.09em;
+
+  &.active {
+    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.inner {
+  padding: 5px 10px;
+  @include flexbox(space-between);
+
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: darken($white, 5);
+  }
+}
+
+.logo {
+  stroke: $black;
+  width: 20px;
+  height: 10px;
+  transition: all 0.2s linear;
+  &.active {
+    transform: rotate(180deg);
+    stroke: $blue;
+  }
+}
+
+.modal {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: $white;
+  z-index: 10;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 8px 8px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.2s ease-in-out;
+  &.active {
+    transform: scaleY(1);
+  }
+}
+
+.item {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  border-top: 1px solid #b5b5b5;
+
+  cursor: pointer;
+  &:hover {
+    background-color: darken($white, 5%);
+  }
+}
