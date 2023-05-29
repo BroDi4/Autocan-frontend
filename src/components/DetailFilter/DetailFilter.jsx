@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { setMileage, setPower, setPrice, setYear } from '../../redux/slices/rangeFilterSlice';
 import styles from './DetailFilter.module.scss';
 import RangeInput from '../UI/RangeInput/RangeInput';
 
 const DetailFilter = () => {
-  const [price, setPrice] = useState(0);
-  const [year, setYear] = useState(2000);
-  const [mileage, setMileage] = useState(0);
-  const [power, setPower] = useState(70);
-  console.log('rerender');
+  const { price, year, mileage, power } = useSelector((state) => state.rangeFilter);
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.root}>
@@ -18,7 +17,9 @@ const DetailFilter = () => {
         step={1000000}
         title={'Цена'}
         value={price}
-        setValue={setPrice}
+        setValue={(value) => {
+          dispatch(setPrice(value));
+        }}
       />
       <RangeInput
         min={2000}
@@ -26,7 +27,9 @@ const DetailFilter = () => {
         step={1}
         title={'Год выпуска'}
         value={year}
-        setValue={setYear}
+        setValue={(value) => {
+          dispatch(setYear(value));
+        }}
       />
       <RangeInput
         min={0}
@@ -34,7 +37,9 @@ const DetailFilter = () => {
         step={10000}
         title={'Пробег'}
         value={mileage}
-        setValue={setMileage}
+        setValue={(value) => {
+          dispatch(setMileage(value));
+        }}
       />
       <RangeInput
         min={70}
@@ -42,7 +47,9 @@ const DetailFilter = () => {
         step={10}
         title={'Мощность, л.с'}
         value={power}
-        setValue={setPower}
+        setValue={(value) => {
+          dispatch(setPower(value));
+        }}
       />
     </div>
   );

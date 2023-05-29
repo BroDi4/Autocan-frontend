@@ -1,0 +1,33 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  @include flexbox(flex-start);
+}
+
+.link {
+  font-family: 'Kodchasan', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $black;
+  @include hoverlink($blue, 20px);
+}
+
+.linkblock {
+  @include flexbox(flex-start);
+  &:last-child {
+    & .link {
+      color: $grey;
+      pointer-events: none;
+      cursor: default;
+    }
+    & .img {
+      display: none;
+    }
+  }
+}
+
+.img {
+  margin: 0 15px;
+}

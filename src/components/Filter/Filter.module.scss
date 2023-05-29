@@ -7,37 +7,5 @@
 }
 
 .top {
-  @include flexbox(flex-start);
-}
-
-.age {
-  margin-bottom: 40px;
-}
-
-.btn {
-  padding: 10px 75px;
-  font-size: 14px;
-  border-radius: 8px;
-  font-family: 'Cairo', sans-serif;
-  font-weight: 300;
-  line-height: 200%;
-  color: $black;
-  transition: all 0.2s linear;
-  &:hover {
-    background-color: darken($white, 5%);
-  }
-  &.active {
-    @include button($white, $blue);
-    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.27);
-  }
-}
-
-.params {
-  width: 45%;
-}
-
-.settings {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  @include flexbox(space-between);
 }

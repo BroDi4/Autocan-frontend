@@ -4,14 +4,14 @@
   justify-content: $jc;
 }
 
-@mixin hoverlink($color) {
+@mixin hoverlink($color, $top) {
   transition: all 0.2s ease-in-out;
   position: relative;
   &::after {
     content: '';
     width: 0;
     height: 2px;
-    top: 25px;
+    top: $top;
     left: 0;
     background-color: $blue;
     position: absolute;

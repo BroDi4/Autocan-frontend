@@ -1,0 +1,14 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  background-color: $white;
+  padding-top: 40px;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 200%;
+  text-transform: uppercase;
+}

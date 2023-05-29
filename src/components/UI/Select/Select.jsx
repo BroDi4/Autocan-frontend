@@ -28,7 +28,7 @@ const Select = ({ selectedItem, setSelectedItem, options }) => {
   return (
     <div
       ref={select}
-      id={selectedItem.value}
+      id={selectedItem._id}
       className={[styles.root, isOpen ? styles.active : ''].join(' ')}>
       <div
         onClick={() => {
@@ -41,7 +41,7 @@ const Select = ({ selectedItem, setSelectedItem, options }) => {
       <div className={[styles.modal, isOpen ? styles.active : ''].join(' ')}>
         {options.map((obj) => {
           return (
-            <span onClick={() => onClickItem(obj)} key={obj.value} className={styles.item}>
+            <span onClick={() => onClickItem(obj)} key={obj._id} className={styles.item}>
               {obj.name}
             </span>
           );

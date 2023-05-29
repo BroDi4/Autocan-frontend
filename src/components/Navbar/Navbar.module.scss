@@ -7,7 +7,7 @@
 }
 
 .link {
-  @include hoverlink($blue);
+  @include hoverlink($blue, 25px);
   font-family: 'Cairo', sans-serif;
   line-height: 199.4%;
   font-weight: 300;

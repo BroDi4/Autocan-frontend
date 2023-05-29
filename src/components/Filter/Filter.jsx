@@ -1,40 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 import styles from './Filter.module.scss';
-import Select from '../UI/Select/Select';
+import ParamFilter from '../ParamFilter/ParamFilter';
 import DetailFilter from '../DetailFilter/DetailFilter';
 
 const Filter = () => {
-  const [selectedAge, setSelectedAge] = useState(0);
-  const [selectedDrive, setSelectedDrive] = useState({ name: 'Привод', value: '' });
-  const [selectedModel, setSelectedModel] = useState({ name: 'Модель', value: '' });
-  const [selectedBox, setSelectedBox] = useState({ name: 'Коробка', value: '' });
-  const [selectedColor, setSelectedColor] = useState({ name: 'Цвет', value: '' });
-
-  const ageVariants = ['Новые', 'С пробегом'];
-  const driveVariants = [
-    { name: 'Полный привод', value: 'full' },
-    { name: 'Передний привод', value: 'forward' },
-    { name: 'Задний привод', value: 'back' },
-  ];
-
-  const boxVariants = [
-    { name: 'МКПП', value: 'mechanic' },
-    { name: 'АКПП', value: 'automatic' },
-  ];
-
-  const colorVariants = [
-    { name: 'Черный', value: 'black' },
-    { name: 'Белый', value: 'white' },
-    { name: 'Серый', value: 'grey' },
-  ];
-
   return (
     <div className={styles.root}>
       <div className={['container', styles.inner].join(' ')}>
         <div className={styles.top}>
-          <div className={styles.params}>
+          <ParamFilter />
+          {/* <div className={styles.params}>
             <div className={styles.age}>
               {ageVariants.map((item, i) => {
                 return (
@@ -42,14 +18,13 @@ const Filter = () => {
                     key={i}
                     className={[styles.btn, selectedAge === i ? styles.active : ''].join(' ')}
                     onClick={() => {
-                      setSelectedAge(i);
+                      dispatch(setSelectedAge(i));
                     }}>
                     {item}
                   </button>
                 );
               })}
             </div>
-
             <div className={styles.settings}>
               <Select
                 selectedItem={selectedDrive}
@@ -76,11 +51,8 @@ const Filter = () => {
                 id={'color'}
               />
             </div>
-          </div>
+          </div> */}
           <DetailFilter />
-        </div>
-        <div className={styles.bottom}>
-          <Link to={'/catalog'} className={styles.showBtn}></Link>
         </div>
       </div>
     </div>
