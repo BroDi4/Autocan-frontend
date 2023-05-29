@@ -2,6 +2,7 @@ import React from 'react';
 
 import TitleBlock from '../components/TitleBlock/TitleBlock';
 import Filter from '../components/Filter/Filter';
+import ProductList from '../components/ProductList/ProductList';
 
 const Catalog = () => {
   const links = [
@@ -12,6 +13,7 @@ const Catalog = () => {
     <>
       <TitleBlock links={links} title={'Новые Nissan в г. ульяновск'} />
       <Filter />
+      <ProductList />
     </>
   );
 };

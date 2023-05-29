@@ -10,50 +10,11 @@ const Filter = () => {
       <div className={['container', styles.inner].join(' ')}>
         <div className={styles.top}>
           <ParamFilter />
-          {/* <div className={styles.params}>
-            <div className={styles.age}>
-              {ageVariants.map((item, i) => {
-                return (
-                  <button
-                    key={i}
-                    className={[styles.btn, selectedAge === i ? styles.active : ''].join(' ')}
-                    onClick={() => {
-                      dispatch(setSelectedAge(i));
-                    }}>
-                    {item}
-                  </button>
-                );
-              })}
-            </div>
-            <div className={styles.settings}>
-              <Select
-                selectedItem={selectedDrive}
-                setSelectedItem={setSelectedDrive}
-                options={driveVariants}
-                id={'drive'}
-              />
-              <Select
-                selectedItem={selectedModel}
-                setSelectedItem={setSelectedModel}
-                options={[]}
-                id={'model'}
-              />
-              <Select
-                selectedItem={selectedBox}
-                setSelectedItem={setSelectedBox}
-                options={boxVariants}
-                id={'box'}
-              />
-              <Select
-                selectedItem={selectedColor}
-                setSelectedItem={setSelectedColor}
-                options={colorVariants}
-                id={'color'}
-              />
-            </div>
-          </div> */}
           <DetailFilter />
         </div>
+        {/* <div className={styles.bottom}>
+          <button className={styles.btn}>Сбросить фильтры</button>
+        </div> */}
       </div>
     </div>
   );

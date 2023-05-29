@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setMileage, setPower, setPrice, setYear } from '../../redux/slices/rangeFilterSlice';
@@ -13,8 +13,8 @@ const DetailFilter = () => {
     <div className={styles.root}>
       <RangeInput
         min={0}
-        max={50000000}
-        step={1000000}
+        max={7000000}
+        step={100000}
         title={'Цена'}
         value={price}
         setValue={(value) => {

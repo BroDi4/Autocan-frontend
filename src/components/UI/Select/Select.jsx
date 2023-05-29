@@ -34,7 +34,7 @@ const Select = ({ selectedItem, setSelectedItem, options }) => {
         onClick={() => {
           setIsOpen(!isOpen);
         }}
-        className={styles.inner}>
+        className={[styles.inner, isOpen ? styles.active : ''].join(' ')}>
         <span>{selectedItem.name}</span>
         <ArrowLogo className={[styles.logo, isOpen ? styles.active : ''].join(' ')} />
       </div>

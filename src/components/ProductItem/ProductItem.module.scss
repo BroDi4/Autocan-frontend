@@ -1,0 +1,61 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  border-radius: 20px;
+  transition: all 0.1s linear;
+  &:hover {
+    box-shadow: 4px 5px 12px rgba(black, 0.4);
+    transform: scale(1.03);
+  }
+}
+
+.top {
+  padding: 20px;
+}
+
+.titleblock {
+  margin-bottom: 25px;
+  h3 {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+  }
+  span {
+    font-family: 'Kodchasan';
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 58px;
+  }
+}
+
+.imgbox {
+  width: 200px;
+  height: 120px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px 40px;
+  background-color: $blue;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  color: $white;
+
+  border-radius: 0 0 20px 20px;
+}
+
+.price {
+  margin: 10px 0;
+}
+
+.address {
+  font-size: 15px;
+}

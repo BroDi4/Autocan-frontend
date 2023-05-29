@@ -1,2 +1,41 @@
 @import '../../scss/mixins';
 @import '../../scss/variables';
+
+.root {
+  background-color: $white;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.linkblock {
+  @include flexbox(space-between);
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.item {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: $black;
+  @include hoverlink($blue, 20px);
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.copyright {
+  width: 70%;
+  font-size: 13px;
+  margin: 0 auto;
+  span {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { axiosQuery } from '../../axios';
 
 import {
   setSelectedAge,
@@ -28,7 +28,7 @@ const ParamFilter = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const response = await axios.get('http://localhost:4000/categories');
+      const response = await axiosQuery.get('/categories');
       const data = response.data;
       setDriveVariants(data.drives);
       setBoxVariants(data.box);
