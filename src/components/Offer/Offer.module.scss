@@ -1,0 +1,19 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  background-color: $blue;
+  padding: 35px;
+}
+
+.title {
+  font-size: 42px;
+  color: $white;
+  margin-bottom: 35px;
+}
+
+.slide {
+  @include flexbox(space-between);
+  flex-wrap: wrap;
+  padding: 10px 0px;
+}

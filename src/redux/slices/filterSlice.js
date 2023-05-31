@@ -27,6 +27,13 @@ export const filterSlice = createSlice({
     setSelectedColor(state, action) {
       state.selectedColor = action.payload;
     },
+    setToInitialFilter(state) {
+      state.selectedAge = initialState.selectedAge;
+      state.selectedDrive = initialState.selectedDrive;
+      state.selectedModel = initialState.selectedModel;
+      state.selectedBox = initialState.selectedBox;
+      state.selectedColor = initialState.selectedColor;
+    },
   },
 });
 
@@ -37,6 +44,7 @@ export const {
   setSelectedBox,
   setSelectedColor,
   setPrice,
+  setToInitialFilter,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

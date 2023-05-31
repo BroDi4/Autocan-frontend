@@ -23,9 +23,16 @@ export const rangeFilterSlice = createSlice({
     setPower(state, action) {
       state.power = action.payload;
     },
+    setToInitialRangeFilter(state) {
+      state.price = initialState.price;
+      state.year = initialState.year;
+      state.mileage = initialState.mileage;
+      state.power = initialState.power;
+    },
   },
 });
 
-export const { setPrice, setYear, setMileage, setPower } = rangeFilterSlice.actions;
+export const { setPrice, setYear, setMileage, setPower, setToInitialRangeFilter } =
+  rangeFilterSlice.actions;
 
 export default rangeFilterSlice.reducer;

@@ -24,7 +24,6 @@ const ProductList = () => {
           power: rangeFilter.power,
         },
       });
-      //   console.log(response);
       setProducts(response.data);
     };
     fetchProducts();

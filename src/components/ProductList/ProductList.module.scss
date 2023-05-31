@@ -9,9 +9,8 @@
 .inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 150px;
+  column-gap: 190px;
   row-gap: 20px;
-  padding: 0 90px !important;
 }
 
 .notFound {

@@ -1,0 +1,27 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  @include flexbox(flex-start);
+}
+
+.arrowBox {
+  cursor: pointer;
+  height: 100%;
+}
+
+.arrow {
+  stroke: $white;
+  &:hover {
+    stroke: darken($white, 7%);
+  }
+}
+
+.left {
+  transform: rotate(180deg);
+  margin-right: 20px;
+}
+
+.right {
+  margin-left: 20px;
+}
