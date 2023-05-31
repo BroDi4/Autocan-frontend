@@ -5,7 +5,7 @@ import { ReactComponent as Arrow } from '../../assets/img/arrowRight.svg';
 import SliderList from '../SliderList/SliderList';
 import Dots from '../Dots/Dots';
 
-const Slider = ({ children, autoPlayInterval, dotMargin, showArrows }) => {
+const Slider = ({ children, autoPlayInterval, dotMargin, showArrows, variant }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
   const slideLength = children.length;
@@ -77,6 +77,7 @@ const Slider = ({ children, autoPlayInterval, dotMargin, showArrows }) => {
         </div>
       </div>
       <Dots
+        variant={variant}
         dotMargin={dotMargin}
         slide={currentSlide}
         goToSlide={goToSlide}
