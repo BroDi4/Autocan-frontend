@@ -5,6 +5,10 @@
   background-color: $white;
   margin: 0 auto;
   padding: 120px 0;
+
+  @media (max-width: 426px) {
+    padding: 70px 0;
+  }
 }
 
 .inner {
@@ -14,7 +18,7 @@
 }
 
 .linkblock {
-  @include flexbox(space-between);
+  @include flexbox(center);
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
@@ -37,5 +41,9 @@
     &:not(:last-child) {
       margin-right: 25px;
     }
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
   }
 }

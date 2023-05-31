@@ -20,6 +20,9 @@
   font-size: 16px;
   line-height: 200%;
   letter-spacing: 0.09em;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .settings {
@@ -34,5 +37,9 @@
     font-size: 16px;
     line-height: 199.4%;
     letter-spacing: 0.09em;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 }

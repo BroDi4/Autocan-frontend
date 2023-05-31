@@ -3,7 +3,17 @@
 
 .root {
   @include flexbox(space-between);
-  width: 520px;
+  width: 460px;
+
+  @media (max-width: 769px) {
+    width: 400px;
+  }
+  @media (max-width: 600px) {
+    width: 285px;
+  }
+  @media (max-width: 426px) {
+    width: 200px;
+  }
 }
 
 .link {
@@ -13,4 +23,11 @@
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.09em;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
+  @media (max-width: 426px) {
+    font-size: 12px;
+  }
 }

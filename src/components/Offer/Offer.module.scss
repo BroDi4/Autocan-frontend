@@ -3,17 +3,21 @@
 
 .root {
   background-color: $blue;
-  padding: 35px;
+  padding: 35px 0;
 }
 
 .title {
   font-size: 42px;
   color: $white;
   margin-bottom: 35px;
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+    text-align: center;
+  }
 }
 
 .slide {
   @include flexbox(space-between);
-  flex-wrap: wrap;
   padding: 10px 0px;
 }

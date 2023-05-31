@@ -2,7 +2,15 @@
 @import '../../scss/variables';
 
 .age {
+  @include flexbox(flex-start);
   margin-bottom: 40px;
+
+  @media (max-width: 1100px) {
+    justify-content: center;
+  }
+  @media (max-width: 426px) {
+    flex-direction: column;
+  }
 }
 
 .btn {
@@ -21,14 +29,42 @@
     @include button($white, $blue);
     box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.27);
   }
+
+  @media (max-width: 426px) {
+    width: 100%;
+  }
 }
 
 .params {
   width: 40%;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .settings {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+
+  @media (max-width: 1100px) {
+    div {
+      width: 340px;
+      justify-self: center;
+    }
+  }
+  @media (max-width: 769px) {
+    div {
+      width: 200px;
+      justify-self: center;
+    }
+  }
+  @media (max-width: 426px) {
+    grid-template-columns: 1fr;
+    div {
+      width: 100%;
+    }
+  }
 }

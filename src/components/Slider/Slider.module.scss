@@ -23,8 +23,15 @@
 .left {
   transform: rotate(180deg);
   margin-right: 20px;
+
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 }
 
 .right {
   margin-left: 20px;
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 }
