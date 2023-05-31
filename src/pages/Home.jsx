@@ -4,6 +4,7 @@ import Intro from '../components/Intro/Intro';
 import Filter from '../components/Filter/Filter';
 import LinkBlock from '../components/LinkBlock/LinkBlock';
 import Offer from '../components/Offer/Offer';
+import Advantages from '../components/Advantages/Advantages';
 
 const Home = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Filter />
       <LinkBlock />
       <Offer />
+      <Advantages />
     </>
   );
 };
