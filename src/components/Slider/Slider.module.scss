@@ -8,6 +8,9 @@
 .arrowBox {
   cursor: pointer;
   height: 100%;
+  &.none {
+    display: none;
+  }
 }
 
 .arrow {

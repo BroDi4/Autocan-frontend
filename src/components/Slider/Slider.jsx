@@ -5,7 +5,7 @@ import { ReactComponent as Arrow } from '../../assets/img/arrowRight.svg';
 import SliderList from '../SliderList/SliderList';
 import Dots from '../Dots/Dots';
 
-const Slider = ({ children, autoPlayInterval }) => {
+const Slider = ({ children, autoPlayInterval, dotMargin, showArrows }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
   const slideLength = children.length;
@@ -61,7 +61,7 @@ const Slider = ({ children, autoPlayInterval }) => {
   return (
     <>
       <div className={styles.root}>
-        <div className={styles.arrowBox}>
+        <div className={[styles.arrowBox, !showArrows ? styles.none : ''].join(' ')}>
           <Arrow onClick={() => rollSlider(-1)} className={[styles.arrow, styles.left].join(' ')} />
         </div>
 
@@ -72,13 +72,22 @@ const Slider = ({ children, autoPlayInterval }) => {
           onTouchMove={handleTouchMove}
         />
 
-        <div className={styles.arrowBox}>
+        <div className={[styles.arrowBox, !showArrows ? styles.none : ''].join(' ')}>
           <Arrow onClick={() => rollSlider(1)} className={[styles.arrow, styles.right].join(' ')} />
         </div>
       </div>
-      <Dots slide={currentSlide} goToSlide={goToSlide} slideLength={slideLength} />
+      <Dots
+        dotMargin={dotMargin}
+        slide={currentSlide}
+        goToSlide={goToSlide}
+        slideLength={slideLength}
+      />
     </>
   );
+};
+
+Slider.defaultProps = {
+  showArrows: true,
 };
 
 export default Slider;
