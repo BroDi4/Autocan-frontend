@@ -1,0 +1,12 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.form {
+  & div:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.btn {
+  @include formBtn;
+}

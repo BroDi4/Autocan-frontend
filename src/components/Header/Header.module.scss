@@ -25,3 +25,10 @@
     width: 20%;
   }
 }
+
+.personallogo {
+  stroke: $grey;
+  &.active {
+    stroke: #0075ff;
+  }
+}

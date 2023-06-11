@@ -1,0 +1,26 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.form {
+  & div:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.btn {
+  @include formBtn;
+}
+
+.linkblock {
+  @include flexbox(space-between);
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 300;
+  color: $blue;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    color: darken($blue, 10%);
+  }
+}

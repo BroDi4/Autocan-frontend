@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { axiosQuery } from '../../axios';
+import axios from '../../axios';
 
 import {
   setSelectedAge,
@@ -26,15 +26,20 @@ const ParamFilter = () => {
 
   const ageVariants = ['Новые', 'С пробегом'];
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const response = await axiosQuery.get('/categories');
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get('/categories');
       const data = response.data;
       setDriveVariants(data.drives);
       setBoxVariants(data.box);
       setColorVariants(data.colors);
       setModelVariants(data.model);
-    };
+    } catch (err) {
+      alert('Произошла ошибка при загрузке данных, повторите попытку позже');
+    }
+  };
+
+  useEffect(() => {
     fetchCategories();
   }, []);
 

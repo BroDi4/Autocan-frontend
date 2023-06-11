@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { axiosQuery } from '../../axios';
+import axios from '../../axios';
 
 import styles from './Offer.module.scss';
 import Slider from '../Slider/Slider';
@@ -26,7 +26,7 @@ const Offer = () => {
 
   useEffect(() => {
     const fetchOffers = async () => {
-      const response = await axiosQuery.get('/offer');
+      const response = await axios.get('/offer');
       setOffers(response.data);
     };
     fetchOffers();

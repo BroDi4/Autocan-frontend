@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { axiosQuery } from '../../axios';
+import axios from '../../axios';
 
 import styles from './ProductList.module.scss';
 import ProductItem from '../ProductItem/ProductItem';
@@ -11,7 +11,7 @@ const ProductList = () => {
   const rangeFilter = useSelector((state) => state.rangeFilter);
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await axiosQuery.get('/products', {
+      const response = await axios.get('/products', {
         params: {
           age: filter.selectedAge,
           model: filter.selectedModel._id,

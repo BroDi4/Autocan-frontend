@@ -1,5 +1,12 @@
 import axios from 'axios';
 
-export const axiosQuery = axios.create({
+const axiosQuery = axios.create({
   baseURL: 'http://localhost:4000',
 });
+
+axiosQuery.interceptors.request.use((config) => {
+  config.headers.Authorization = window.localStorage.getItem('token');
+  return config;
+});
+
+export default axiosQuery;
