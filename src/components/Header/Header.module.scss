@@ -5,7 +5,6 @@
   width: 100%;
   padding: 25px 0;
   background-color: $white;
-
   @media (max-width: 600px) {
     padding: 20px 0;
   }
@@ -26,9 +25,81 @@
   }
 }
 
+.personal {
+  position: relative;
+}
+
+.popup {
+  position: absolute;
+  top: -13px;
+  left: -170px;
+  width: 200px;
+  box-shadow: 0px 8px 11px rgba(0, 0, 0, 0.24);
+  z-index: 10;
+  padding: 20px 10px;
+  background-color: $white;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    user-select: auto;
+  }
+}
+
+.popupTop {
+  @include flexbox(flex-start);
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(181, 181, 181, 0.19);
+}
+
+.user {
+  @include flexbox(flex-start);
+  width: 80%;
+  overflow: hidden;
+  span {
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: $blue;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.popupBottom {
+  padding-top: 15px;
+}
+
+.link {
+  display: block;
+  font-family: 'Kodchasan', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: $black;
+  transition: color 0.2s linear;
+  &:hover {
+    color: $blue;
+  }
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
 .personallogo {
+  position: relative;
+  z-index: 100;
   stroke: $grey;
   &.active {
     stroke: #0075ff;
   }
+  cursor: pointer;
 }
