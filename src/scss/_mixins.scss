@@ -61,3 +61,13 @@
     cursor: default;
   }
 }
+
+@mixin formLabel {
+  font-size: 12px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300;
+  line-height: 200%;
+  display: block;
+  color: $white;
+  letter-spacing: 0.09em;
+}

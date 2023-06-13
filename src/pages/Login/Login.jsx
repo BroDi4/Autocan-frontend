@@ -5,7 +5,7 @@ import { Navigate, Link } from 'react-router-dom';
 
 import styles from './Login.module.scss';
 import FormSkeleton from '../../components/FormSkeleton/FormSkeleton';
-import FormInput from '../../components/UI/FormInput/FormInput';
+import FormInput from '../../components/UI/AuthInput/AuthInput';
 import ErrorBox from '../../components/ErrorBox/ErrorBox';
 import { fetchLogin, clearStatus } from '../../redux/slices/authSlice';
 
@@ -30,12 +30,14 @@ const Login = () => {
     }
   }, []);
 
-  const onSubmit = (value) => {
-    dispatch(fetchLogin(value));
+  const onSubmit = async (value) => {
+    const data = await dispatch(fetchLogin(value));
+    if (data.payload.token) {
+      window.localStorage.setItem('token', data.payload.token);
+    }
   };
 
   if (userdata) {
-    window.localStorage.setItem('token', userdata.token);
     return <Navigate to={'/'} />;
   }
 

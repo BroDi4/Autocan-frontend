@@ -1,0 +1,45 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  @include flexbox(center);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 60px;
+  align-items: end;
+}
+
+.imgbox {
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.formblock {
+  padding-top: 45px;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 45px;
+}
+
+.btnbox {
+  margin-top: 50px;
+  @include flexbox(center);
+}
+
+.btn {
+  height: 40px;
+  padding: 0 55px;
+  @include button($black, $white);
+  &:disabled {
+    background-color: darken($white, 15%);
+    cursor: default;
+  }
+}

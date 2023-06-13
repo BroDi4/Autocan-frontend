@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom';
 
 import styles from './Register.module.scss';
 import FormSkeleton from '../../components/FormSkeleton/FormSkeleton';
-import FormInput from '../../components/UI/FormInput/FormInput';
+import FormInput from '../../components/UI/AuthInput/AuthInput';
 import ErrorBox from '../../components/ErrorBox/ErrorBox';
 import { fetchRegister, clearStatus } from '../../redux/slices/authSlice';
 

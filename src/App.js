@@ -11,12 +11,14 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import { fetchAuth } from './redux/slices/authSlice';
+import { fetchCategory } from './redux/slices/categorySlice';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAuth());
+    dispatch(fetchCategory());
   }, []);
 
   return (

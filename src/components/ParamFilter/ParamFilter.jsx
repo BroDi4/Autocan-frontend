@@ -15,33 +15,12 @@ import Select from '../UI/Select/Select';
 
 const ParamFilter = () => {
   const dispatch = useDispatch();
+  const categories = useSelector((state) => state.category.data);
   const { selectedAge, selectedDrive, selectedModel, selectedBox, selectedColor } = useSelector(
     (state) => state.filter,
   );
 
-  const [driveVariants, setDriveVariants] = useState([]);
-  const [boxVariants, setBoxVariants] = useState([]);
-  const [colorVariants, setColorVariants] = useState([]);
-  const [modelVariants, setModelVariants] = useState([]);
-
   const ageVariants = ['Новые', 'С пробегом'];
-
-  const fetchCategories = async () => {
-    try {
-      const response = await axios.get('/categories');
-      const data = response.data;
-      setDriveVariants(data.drives);
-      setBoxVariants(data.box);
-      setColorVariants(data.colors);
-      setModelVariants(data.model);
-    } catch (err) {
-      alert('Произошла ошибка при загрузке данных, повторите попытку позже');
-    }
-  };
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
 
   return (
     <div className={styles.params}>
@@ -63,22 +42,22 @@ const ParamFilter = () => {
         <Select
           selectedItem={selectedDrive}
           setSelectedItem={(value) => dispatch(setSelectedDrive(value))}
-          options={driveVariants}
+          options={categories.drives || []}
         />
         <Select
           selectedItem={selectedModel}
           setSelectedItem={(value) => dispatch(setSelectedModel(value))}
-          options={modelVariants}
+          options={categories.model || []}
         />
         <Select
           selectedItem={selectedBox}
           setSelectedItem={(value) => dispatch(setSelectedBox(value))}
-          options={boxVariants}
+          options={categories.box || []}
         />
         <Select
           selectedItem={selectedColor}
           setSelectedItem={(value) => dispatch(setSelectedColor(value))}
-          options={colorVariants}
+          options={categories.colors || []}
         />
       </div>
     </div>

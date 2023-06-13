@@ -1,33 +1,23 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 
 import styles from './FormInput.module.scss';
 
-const FormInput = forwardRef(({ label, id, type, onChange, onBlur, name, error }, ref) => {
-  const [active, setActive] = useState(false);
-
-  const onInputBlur = (e) => {
-    onBlur(e);
-    if (e.target.value.length < 1) {
-      setActive(false);
-    }
-  };
-
+const FormInput = forwardRef(({ label, placeholder, onChange, onBlur, name, errors }, ref) => {
   return (
-    <div className={[styles.root, error ? styles.errorActive : ''].join(' ')}>
+    <div className={styles.root}>
+      <label className={styles.label} htmlFor="">
+        {label}
+      </label>
       <input
-        id={id}
         onChange={onChange}
-        onFocus={() => setActive(true)}
-        onBlur={onInputBlur}
+        onBlur={onBlur}
         name={name}
         ref={ref}
         className={styles.input}
-        type={type}
+        placeholder={placeholder}
+        type="text"
       />
-      <label className={[styles.label, active ? styles.active : ''].join(' ')} htmlFor={id}>
-        {label}
-      </label>
-      <span className={styles.error}>{error}</span>
+      <span className={styles.error}>{errors}</span>
     </div>
   );
 });

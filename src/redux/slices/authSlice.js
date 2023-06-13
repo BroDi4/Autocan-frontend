@@ -63,7 +63,6 @@ const authSlice = createSlice({
       state.status = 'loaded';
     },
     [fetchAuth.rejected]: (state) => {
-      state.status = 'error';
       state.userdata = null;
     },
   },
