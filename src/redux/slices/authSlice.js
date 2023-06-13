@@ -28,6 +28,9 @@ const authSlice = createSlice({
     clearStatus(state) {
       state.status = 'loading';
     },
+    logout(state) {
+      state.userdata = null;
+    },
   },
   extraReducers: {
     [fetchLogin.pending]: (state) => {
@@ -68,6 +71,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { clearStatus } = authSlice.actions;
+export const { clearStatus, logout } = authSlice.actions;
 
 export default authSlice.reducer;

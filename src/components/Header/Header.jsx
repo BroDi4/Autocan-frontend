@@ -1,39 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import styles from './Header.module.scss';
 import logo from '../../assets/img/logo.svg';
 import { ReactComponent as PersonalLogo } from '../../assets/img/personalLogo.svg';
 import Navbar from '../Navbar/Navbar';
+import PersonalPopup from '../PersonalPopup/PersonalPopup';
 
 const Header = () => {
   const userdata = useSelector((state) => state.auth.userdata);
+  const personalRef = useRef();
 
   const [openPopup, setOpenPopup] = useState(false);
 
+  const checkOutsideClick = (e) => {
+    if (personalRef.current && !personalRef.current.contains(e.target)) {
+      setOpenPopup(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', checkOutsideClick);
+    return () => {
+      document.removeEventListener('click', checkOutsideClick);
+    };
+  }, []);
+
   const authPersonal = (
-    <div className={styles.personal}>
+    <div className={styles.personal} ref={personalRef}>
       <PersonalLogo
         onClick={() => {
           setOpenPopup(!openPopup);
         }}
         className={[styles.personallogo, styles.active].join(' ')}
       />
-      <div className={[styles.popup, openPopup ? styles.active : ''].join(' ')}>
-        <div className={styles.popupTop}>
-          <div className={styles.user}>
-            <span>{userdata?.name}</span>
-            <span>{userdata?.surname}</span>
-          </div>
-        </div>
-        <div className={styles.popupBottom}>
-          <Link to={'/personal'} className={styles.link}>
-            Личный кабинет
-          </Link>
-          <button className={styles.link}>Выйти</button>
-        </div>
-      </div>
+      <PersonalPopup openPopup={openPopup} setOpenPopup={setOpenPopup} />
     </div>
   );
 
