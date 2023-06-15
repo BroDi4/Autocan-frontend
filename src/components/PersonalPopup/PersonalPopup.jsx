@@ -20,7 +20,7 @@ const PersonalPopup = ({ openPopup, setOpenPopup }) => {
       <div className={styles.popupTop}>
         <div className={styles.user}>
           <span>{userdata?.name}</span>
-          <span>{userdata?.surname}</span>
+          <span>{userdata?.lastname}</span>
         </div>
       </div>
       <div className={styles.popupBottom}>

@@ -1,0 +1,39 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  background-color: $blue;
+  padding: 25px 0 100px 0;
+}
+
+.titleblock {
+  margin-bottom: 40px;
+  h2 {
+    font-weight: 300;
+    font-size: 36px;
+    color: $white;
+  }
+}
+
+.inner {
+  @include flexbox(space-between);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  row-gap: 45px;
+}
+
+.button {
+  @include button($black, $white);
+  border-radius: 40px;
+  height: 40px;
+  font-family: 'Kodchasan', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  align-self: end;
+}

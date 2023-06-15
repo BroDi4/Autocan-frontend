@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Personal from './pages/Personal';
 import NotFound from './pages/NotFound/NotFound';
 import { fetchAuth } from './redux/slices/authSlice';
 import { fetchCategory } from './redux/slices/categorySlice';
@@ -29,6 +30,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/personal" element={<Personal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

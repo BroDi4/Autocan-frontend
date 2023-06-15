@@ -21,12 +21,12 @@ const TradeForm = ({ setOpenModal }) => {
     formState: { isValid, errors },
   } = useForm({
     defaultValues: {
-      cusCar: 'Nissan Qaskai',
-      cusEquipment: 'XE',
+      cusCar: '',
+      cusEquipment: '',
       phone: '',
       name: '',
-      shopCar: 'Nissan Qaskai',
-      shopEquipment: 'XE',
+      shopCar: '',
+      shopEquipment: '',
     },
     mode: 'onBlur',
   });
@@ -62,12 +62,19 @@ const TradeForm = ({ setOpenModal }) => {
         <div className={styles.inner}>
           <div className={styles.formblock}>
             <div className={styles.imgbox}>
-              <img src={models.find((item) => item.name === cusCar)?.imgUrl} alt="" />
+              <img
+                src={
+                  models.find((item) => item.name === cusCar)?.imgUrl ||
+                  'https://avanta-avto-credit.ru/upload/resize_cache/iblock/5a9/600_600_140cd750bba9870f18aada2478b24840a/5a914707efe778bb78eb2a9b1918be8b.png'
+                }
+                alt="Выберите модель"
+              />
             </div>
             <div className={styles.field}>
               <FormSelect
                 label={'Ваш автомобиль'}
                 options={modelsList || []}
+                placeholder={'Выберите модель'}
                 {...register('cusCar', { required: 'Выберите автомобиль' })}
                 errors={errors.cusCar?.message}
               />
@@ -76,6 +83,7 @@ const TradeForm = ({ setOpenModal }) => {
               <FormSelect
                 label={'Комплектация'}
                 options={cusEquipment}
+                placeholder={'Выберите комплектацию'}
                 {...register('cusEquipment', { required: 'Выберите комплектацию' })}
                 errors={errors.cusEquipment?.message}
               />
@@ -84,6 +92,7 @@ const TradeForm = ({ setOpenModal }) => {
           <div className={styles.formblock}>
             <div className={styles.field}>
               <FormInput
+                type={'text'}
                 label={'Телефон'}
                 placeholder={'+7'}
                 {...register('phone', { required: 'Введите телефон' })}
@@ -92,6 +101,7 @@ const TradeForm = ({ setOpenModal }) => {
             </div>
             <div className={styles.field}>
               <FormInput
+                type={'text'}
                 label={'Имя'}
                 placeholder={'Укажите ваше имя'}
                 {...register('name', { required: 'Укажите ваше имя' })}
@@ -101,12 +111,19 @@ const TradeForm = ({ setOpenModal }) => {
           </div>
           <div className={styles.formblock}>
             <div className={styles.imgbox}>
-              <img src={models.find((item) => item.name === shopCar)?.imgUrl} alt="" />
+              <img
+                src={
+                  models.find((item) => item.name === shopCar)?.imgUrl ||
+                  'https://avanta-avto-credit.ru/upload/resize_cache/iblock/5a9/600_600_140cd750bba9870f18aada2478b24840a/5a914707efe778bb78eb2a9b1918be8b.png'
+                }
+                alt="Выберите автомобиль"
+              />
             </div>
             <div className={styles.field}>
               <FormSelect
                 label={'Наш автомобиль'}
                 options={modelsList || []}
+                placeholder={'Выберите модель'}
                 {...register('shopCar', { required: 'Выберите автомобиль' })}
                 errors={errors.shopCar?.message}
               />
@@ -115,6 +132,7 @@ const TradeForm = ({ setOpenModal }) => {
               <FormSelect
                 label={'Комплектация'}
                 options={shopEquipment}
+                placeholder={'Выберите комплектацию'}
                 {...register('shopEquipment', { required: 'Выберите комплектацию' })}
                 errors={errors.shopEquipment?.message}
               />
