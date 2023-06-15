@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import styles from './Navbar.module.scss';
 import Modal from '../Modal/Modal';
 import TradeForm from '../TradeForm/TradeForm';
+import CreditForm from '../CreditForm/CreditForm';
 
 const Navbar = () => {
   const [tradeIsOpen, setTradeIsOpen] = useState(false);
@@ -65,7 +66,9 @@ const Navbar = () => {
         title={'Автокредит'}
         subtitle={'КРЕДИТНЫЙ КАЛЬКУЛЯТОР'}
         openModal={creditIsOpen}
-        setOpenModal={setCreditIsOpen}></Modal>
+        setOpenModal={setCreditIsOpen}>
+        <CreditForm setOpenModal={setCreditIsOpen} />
+      </Modal>
     </div>
   );
 };
