@@ -34,7 +34,7 @@ const Footer = () => {
         <div className={styles.copyright}>
           <span>© Autocan 2023.</span>
           <span>Built by Denis Petrov.</span>
-          <span>Powered by Webflow.</span>
+          <span>Powered by React.</span>
         </div>
       </div>
     </div>
