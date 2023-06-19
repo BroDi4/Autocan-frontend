@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Intro.module.scss';
 import Slider from '../Slider/Slider';
 import slide1 from '../../assets/img/backgrounds/slide1.jpg';
-import slide2 from '../../assets/img/backgrounds/slide2.jpg';
+import slide2 from '../../assets/img/backgrounds/slide2.png';
 import slide3 from '../../assets/img/backgrounds/slide3.jpeg';
 
 const Intro = () => {
