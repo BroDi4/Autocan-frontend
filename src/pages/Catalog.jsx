@@ -13,6 +13,7 @@ const Catalog = () => {
     { name: 'Главная', url: '/' },
     { name: 'Автомобили в наличии', url: '/catalog' },
   ];
+
   return (
     <>
       <TitleBlock links={links} title={'Новые Nissan в г. ульяновск'} />

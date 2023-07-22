@@ -36,6 +36,18 @@
   }
 }
 
+@mixin borderlessBtn($color, $border) {
+  display: inline-block;
+  color: $color;
+  border-radius: 8px;
+  border: 1px solid $border;
+  text-align: center;
+  transition: all 0.2s linear;
+  &:hover {
+    border: 1px solid darken($border, 7%);
+  }
+}
+
 @mixin rangeTrack {
   border-radius: 8px;
   height: 2px;

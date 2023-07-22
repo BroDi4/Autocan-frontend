@@ -1,0 +1,24 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.root {
+  @include flexbox(center);
+}
+
+.arrow {
+  stroke: $blue;
+  height: 50%;
+}
+
+.left {
+  transform: rotate(180deg);
+}
+
+.btn {
+  @include borderlessBtn($blue, rgba($grey, 0.4));
+  padding: 0 10px;
+  height: 50px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
