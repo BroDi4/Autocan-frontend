@@ -12,7 +12,6 @@
 .inputBox {
   @include flexbox(flex-start);
   border-radius: 5px;
-  max-width: 220px;
   height: 35px;
   position: relative;
 }
@@ -48,5 +47,6 @@
   font-size: 13px;
   font-weight: 300;
   color: $white;
-  top: 110%;
+  margin-top: 10px;
+  top: 100%;
 }

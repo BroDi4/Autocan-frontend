@@ -13,10 +13,26 @@
     font-size: 36px;
     color: $white;
   }
+  @media (max-width: 769px) {
+    text-align: center;
+  }
+}
+
+.imgbox {
+  @media (max-width: 769px) {
+    display: none;
+  }
 }
 
 .inner {
   @include flexbox(space-between);
+  @media (max-width: 769px) {
+    justify-content: center;
+  }
+  @media (max-width: 469px) {
+    display: block;
+    padding: 0 10px;
+  }
 }
 
 .form {
@@ -24,6 +40,12 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 90px;
   row-gap: 45px;
+  @media (max-width: 469px) {
+    display: block;
+    & > :not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .button {
@@ -36,4 +58,5 @@
   text-transform: uppercase;
   padding: 0 20px;
   align-self: end;
+  width: 100%;
 }

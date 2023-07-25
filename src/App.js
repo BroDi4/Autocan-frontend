@@ -26,12 +26,12 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/personal" element={<Personal />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/catalog' element={<Catalog />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/personal' element={<Personal />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
     </>

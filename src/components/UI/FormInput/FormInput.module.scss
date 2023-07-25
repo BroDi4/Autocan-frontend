@@ -2,8 +2,8 @@
 @import '../../../scss/variables';
 
 .root {
-  max-width: 220px;
   position: relative;
+  display: block;
 }
 
 .label {
@@ -17,6 +17,9 @@
   font-size: 14px;
   border-radius: 5px;
   height: 35px;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 .error {
@@ -25,5 +28,6 @@
   font-size: 13px;
   font-weight: 300;
   color: $white;
-  top: 110%;
+  margin-top: 10px;
+  top: 100%;
 }

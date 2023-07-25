@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../../axios';
+import React from 'react';
 
 import {
   setSelectedAge,
@@ -15,9 +14,9 @@ import Select from '../UI/Select/Select';
 
 const ParamFilter = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.category.data);
+  const categories = useSelector(state => state.category.data);
   const { selectedAge, selectedDrive, selectedModel, selectedBox, selectedColor } = useSelector(
-    (state) => state.filter,
+    state => state.filter,
   );
 
   const ageVariants = ['Новые', 'С пробегом'];
@@ -41,22 +40,22 @@ const ParamFilter = () => {
       <div className={styles.settings}>
         <Select
           selectedItem={selectedDrive}
-          setSelectedItem={(value) => dispatch(setSelectedDrive(value))}
+          setSelectedItem={value => dispatch(setSelectedDrive(value))}
           options={categories.drives || []}
         />
         <Select
           selectedItem={selectedModel}
-          setSelectedItem={(value) => dispatch(setSelectedModel(value))}
+          setSelectedItem={value => dispatch(setSelectedModel(value))}
           options={categories.model || []}
         />
         <Select
           selectedItem={selectedBox}
-          setSelectedItem={(value) => dispatch(setSelectedBox(value))}
+          setSelectedItem={value => dispatch(setSelectedBox(value))}
           options={categories.box || []}
         />
         <Select
           selectedItem={selectedColor}
-          setSelectedItem={(value) => dispatch(setSelectedColor(value))}
+          setSelectedItem={value => dispatch(setSelectedColor(value))}
           options={categories.colors || []}
         />
       </div>

@@ -7,12 +7,12 @@ const Select = ({ selectedItem, setSelectedItem, options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const select = useRef(null);
 
-  const onClickItem = (obj) => {
+  const onClickItem = obj => {
     setSelectedItem(obj);
     setIsOpen(false);
   };
 
-  const checkOutsideClick = (e) => {
+  const checkOutsideClick = e => {
     if (select.current && !select.current.contains(e.target)) {
       setIsOpen(false);
     }
@@ -39,7 +39,7 @@ const Select = ({ selectedItem, setSelectedItem, options }) => {
         <ArrowLogo className={[styles.logo, isOpen ? styles.active : ''].join(' ')} />
       </div>
       <div className={[styles.modal, isOpen ? styles.active : ''].join(' ')}>
-        {options.map((obj) => {
+        {options.map(obj => {
           return (
             <span onClick={() => onClickItem(obj)} key={obj._id} className={styles.item}>
               {obj.name}

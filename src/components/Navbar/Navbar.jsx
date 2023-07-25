@@ -10,7 +10,7 @@ import CreditForm from '../CreditForm/CreditForm';
 const Navbar = () => {
   const [tradeIsOpen, setTradeIsOpen] = useState(false);
   const [creditIsOpen, setCreditIsOpen] = useState(false);
-  const userdata = useSelector((state) => state.auth.userdata);
+  const userdata = useSelector(state => state.auth.userdata);
 
   const authNavbar = (
     <>
@@ -23,12 +23,6 @@ const Navbar = () => {
       <button onClick={() => setTradeIsOpen(true)} className={styles.link}>
         Трейд-ин
       </button>
-      <Link to={'/'} className={styles.link}>
-        Акции
-      </Link>
-      <Link to={'/'} className={styles.link}>
-        Контакты
-      </Link>
     </>
   );
 

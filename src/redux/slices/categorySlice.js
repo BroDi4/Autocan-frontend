@@ -7,7 +7,7 @@ export const fetchCategory = createAsyncThunk('category/fetchCategory', async ()
 });
 
 const initialState = {
-  data: [],
+  data: {},
   status: 'loading',
 };
 
@@ -15,16 +15,16 @@ const categorySlice = createSlice({
   name: 'category',
   initialState,
   extraReducers: {
-    [fetchCategory.pending]: (state) => {
-      state.data = [];
+    [fetchCategory.pending]: state => {
+      state.data = {};
       state.status = 'loading';
     },
     [fetchCategory.fulfilled]: (state, action) => {
       state.data = action.payload;
       state.status = 'loaded';
     },
-    [fetchCategory.error]: (state) => {
-      state.data = [];
+    [fetchCategory.error]: state => {
+      state.data = {};
       state.status = 'error';
     },
   },
